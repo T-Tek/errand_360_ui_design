@@ -1,4 +1,4 @@
-// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, avoid_unnecessary_containers, unrelated_type_equality_checks
+// ignore_for_file: sized_box_for_whitespace, prefer_const_constructors, avoid_unnecessary_containers, unrelated_type_equality_checks, prefer_const_literals_to_create_immutables
 
 import 'dart:ui';
 
@@ -19,15 +19,20 @@ class _ApplicantsCategoryState extends State<ApplicantsCategory> {
       initialIndex: 0,
       
       child: Container(
-        child: TabBar(unselectedLabelColor: Colors.red,
-        labelColor: Colors.red,
+        
+        child: TabBar(unselectedLabelColor: Colors.grey, 
+        indicatorWeight: 2,
+        labelColor: Colors.white,
         isScrollable: true,
-        padding: EdgeInsets.only(left: 0.5),
+        indicatorColor: Colors.purple,
+        labelPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 0.5),
+        indicator: BoxDecoration(borderRadius: BorderRadius.circular(10), color: Colors.purpleAccent),
           tabs: [
-          Tab(child: OutlinedButton(onPressed: (){}, child: Text('All Applicants', style: TextStyle(fontSize: 12),),),),
-          Tab(child: OutlinedButton(onPressed: (){}, child: Text('Shortlisted',style: TextStyle(fontSize: 12))),),
-          Tab(child: OutlinedButton(onPressed: (){}, child: Text('Declined',style: TextStyle(fontSize: 12))),),
-          Tab(child: OutlinedButton(onPressed: (){}, child: Text('Unsure',style: TextStyle(fontSize: 12))),),
+          Tab(child: Text('All Applicants'),),
+          Tab(child: Text('Short Listed'),),
+          Tab(child: Text('Declined'),),
+          Tab(child: Text('Unsure'),),
+
 
           
         ]),

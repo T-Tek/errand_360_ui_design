@@ -15,14 +15,14 @@ class MainPage extends StatefulWidget {
 }
 
 class _MainPageState extends State<MainPage> {
-
-  int currentTabIndex = 0;
   static const List<Widget> pages = [
     WelcomePage(),
     SearchPage(),
     ViewProfile(),
     EditJob()
   ];
+
+  int currentTabIndex = 0;
 
   @override
   Widget build(BuildContext context) {
