@@ -27,136 +27,123 @@ class OperationManagerCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Container(
-        width: 320,
-        height:120,
-        margin: EdgeInsets.only(left: 20, right: 20, top: 10),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                  blurRadius: 10,
-                  spreadRadius: 3,
-                  offset: Offset(1, 1),
-                  color: Colors.grey),
-              BoxShadow(
-                  spreadRadius: 7, 
-                  offset: Offset(-1, -1), 
-                  color: Colors.white)
-            ]),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(child: Image.asset(applicantProfilePic),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 10),
-                  child: Container(
-                    color: Colors.white,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                      jobTitle,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold, 
-                        fontSize: 20,
-                        color: Colors.grey[500]
-                        ),
+    return Container(
+      height:110,
+      padding: EdgeInsets.only(left: 5, right: 20),
+      margin: EdgeInsets.only(left: 40, right: 20, top: 10, bottom: 10),
+      
+      decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: Colors.white,
+          boxShadow: [
+            BoxShadow(
+                blurRadius: 10,
+                spreadRadius: 3,
+                offset: Offset(1, 1),
+                color: Colors.grey),
+            BoxShadow(
+                spreadRadius: 7, 
+                offset: Offset(-1, -4), 
+                color: Colors.white)
+          ]),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              CircleAvatar( 
+              backgroundImage: AssetImage(applicantProfilePic),
+              radius: 22,
+             ),
+             SizedBox(width: 5,),
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: 
+                    [Text(
+                        jobTitle,
+                        style: TextStyle(
+                      fontWeight: FontWeight.bold, 
+                      fontSize: 18,
+                      color: Colors.grey[500]
+                      ),
                     ),
-                    SizedBox(height: 5,),
-                     Container(
-                  width: 230,
-                  color: Colors.white,
-                  child: Row(
-                    children: [
-                      Text(profileAddress, 
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold, 
-                        color: Colors.grey
+                    Row(
+                      children: [
+                         Text(profileAddress, 
+                          style: TextStyle(
+                          fontWeight: FontWeight.bold, 
+                          color: Colors.grey,
+                          fontSize: 12
                         ),
                         ),
-                      SizedBox(width: 10),
-                      Text('Remote', 
-                        style: TextStyle(
-                        fontWeight: FontWeight.bold, 
-                        color: Colors.grey
-                        ),),
-                      SizedBox(width: 10),
+                         Text('|Remote|', 
+                          style: TextStyle(
+                          fontWeight: FontWeight.bold, 
+                          color: Colors.grey,
+                          fontSize: 12
+                          ),),
+                            Text('Fulltime',
+                          style: TextStyle(
+                          fontWeight: FontWeight.bold, 
+                          color: Colors.grey,
+                          fontSize: 12
+                          ),),
 
-                      Divider(),
-                      Text('Fulltime',
-                        style: TextStyle(
-                        fontWeight: FontWeight.bold, 
-                        color: Colors.grey
-                        ),),
-                    ],
-                  ),
-              ),
+
                       ],
                     )
-                  ),
+                  ],
                 ),
-                Container(
-                    color: Colors.white,
-                    child: Text('\$' + hourlyRate.toString()+ '/hr',
-                    style: TextStyle(
-                      color: Colors.grey
-                    ),
-                    )
-                    )
-              ],
-            ),
-           
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Container(
-                  child: Text(
-                    jobDesc,
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.bold),
-                  ),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      ),
-                ),
+              ),
                 
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  child: Text(
-                    'Edit Job Details',
-                    style: TextStyle(
-                        color: Colors.purple, fontWeight: FontWeight.bold),
-                  ),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      ),
+              Container(
+                child: Text('-\$' + hourlyRate.toString()+ '/hr',
+                style: TextStyle(
+                  color: Colors.grey
                 ),
-                 Container(
-                  child: Text(
-                    'Created' +' '+ dateCreated.toString()+ ''+'days ago',
-                    style: TextStyle(
-                        color: Colors.grey, fontWeight: FontWeight.bold),
-                  ),
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      ),
                 ),
-              ],
-            )
-          ],
-        ),
+              ),
+            ],
+          ),
+         
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                jobDesc,
+                style: TextStyle(
+                    color: Colors.grey, fontWeight: FontWeight.bold,
+                          fontSize: 12),
+              )
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                'Edit Job Details',
+                style: TextStyle(
+                    color: Colors.purple, fontWeight: FontWeight.bold,
+                          fontSize: 12),
+              ),
+              SizedBox(width:70),
+               Text(
+                 'Created' +' '+ dateCreated.toString()+ ''+'days ago',
+                 style: TextStyle(
+                     color: Colors.grey, fontWeight: FontWeight.bold
+                     , fontSize: 12),
+               ),
+            ],
+          ),
+          Row(
+            children: [
+              
+            ],
+          ),
+        ],
       ),
     );
   }

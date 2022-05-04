@@ -15,7 +15,7 @@ class WelcomePage extends StatefulWidget {
 class _WelcomePageState extends State<WelcomePage> {
   final List jobList = [
     [
-      'errand.jpg',
+      'images/errand360.jpg',
       'Operation Manager',
       45,
       'Lagos, Nigeria',
@@ -23,14 +23,14 @@ class _WelcomePageState extends State<WelcomePage> {
       10
     ],
       [
-      'google_icon.png',
+      'images/google_icon.png',
       'DevOp',
       14,
       'Abuja, Nigeria',
       'We are looking for',
       10
     ], [
-      'google_icon.png',
+      'images/profile_img.png',
       'Software Engineer',
       100,
       'Ibadan, Nigeria',
@@ -40,7 +40,7 @@ class _WelcomePageState extends State<WelcomePage> {
   ];
 
   final List applicantsList = [
-    ['images/profile_img.png', 'Nnamdi CTO', 'Lagos, Nigeria'],
+    ['images/errand360.jpg', 'Nnamdi CTO', 'Lagos, Nigeria'],
     ['images/profile_img.png', 'Rashydon', 'Kaduna, Nigeria'],
     ['images/profile_img.png', 'Abraham', 'Abuja, Nigeria'],
     ['images/profile_img.png', 'Jumoke', 'Accra, Ghana'],
@@ -50,6 +50,7 @@ class _WelcomePageState extends State<WelcomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         children: [
           Row(
@@ -71,7 +72,10 @@ class _WelcomePageState extends State<WelcomePage> {
                   ),
                 ),
               ),
-              Icon(Icons.notifications)
+              Padding(
+                padding: const EdgeInsets.only(right: 20, top: 30),
+                child: Icon(Icons.notifications, color: Colors.blueGrey,),
+              )
             ],
           ),
 
@@ -124,6 +128,7 @@ class _WelcomePageState extends State<WelcomePage> {
           //operation manager role
           Container(
               height: 150,
+              width: MediaQuery.of(context).size.width,
               color: Colors.white,
               child: ListView.builder(
                   itemCount: jobList.length,

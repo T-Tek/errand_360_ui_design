@@ -19,9 +19,9 @@ class _SearchPageState extends State<SearchPage> {
 
   
   final List applicantsList = [
-    ['images/profile_img.png', 'Nnamdi CTO', 'Lagos, Nigeria'],
-    ['images/profile_img.png', 'Temitope Tek', 'Lagos, Nigeria'],
-    ['images/profile_img.png', 'Abraham ', 'Lagos, Nigeria'],
+    ['images/errand360.jpg', 'Nnamdi CTO', 'Lagos, Nigeria'],
+    ['images/google_icon.png', 'Temitope Tek', 'Lagos, Nigeria'],
+    ['images/profile_immg.png', 'Abraham ', 'Lagos, Nigeria'],
     ['images/profile_img.png', 'Temitope', 'Lagos, Nigeria'],
     ['images/profile_img.png', 'Temitope', 'Lagos, Nigeria'],
     ['images/profile_img.png', 'Temitope', 'Lagos, Nigeria'],

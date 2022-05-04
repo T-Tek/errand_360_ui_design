@@ -26,19 +26,9 @@ class ViewProfile extends StatelessWidget {
                         Container(
                           child: Row(
                             children: [
-                                Padding(
-                          padding: const EdgeInsets.only(left: 20),
-                          child: Container(
-                            height: 20, width: 20,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle, 
-                              image: DecorationImage(
-                                image: AssetImage('profile_img.png'),
-                                )
+                            CircleAvatar(
+                              backgroundImage: AssetImage('images/errand360.jpg')
                             ),
-                            
-                          ),
-                        ),
             
                         SizedBox(width: 15,),
             

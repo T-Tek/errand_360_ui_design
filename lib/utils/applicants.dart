@@ -26,20 +26,12 @@ class _ApplicantsCardState extends State<ApplicantsCard> {
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       child: Container(
-        height: 130,
-        margin: EdgeInsets.only(left: 20, right: 20, bottom: 25),
+        height: 140,
+        margin: EdgeInsets.only(left: 20, right: 20, bottom: 12,),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
-            boxShadow: [
-              BoxShadow(
-                  blurRadius: 10,
-                  spreadRadius: 3,
-                  offset: Offset(1, 1),
-                  color: Colors.grey),
-              BoxShadow(
-                  spreadRadius: 7, offset: Offset(-1, -1), color: Colors.white)
-            ]),
+          ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
@@ -48,12 +40,20 @@ class _ApplicantsCardState extends State<ApplicantsCard> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 15),
+                  padding: const EdgeInsets.only(left: 15, ),
                   child: Container(
+
                     color: Colors.white,
                     child: Row(
+                      
                       children: [
-                        Image.asset(widget.applicantProfilePic),
+                        Padding(
+                          padding: const EdgeInsets.only(top: 5),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage(widget.applicantProfilePic),
+                            radius: 30,
+                          ),
+                        ),
                         SizedBox(
                           width: 13,
                         ),
