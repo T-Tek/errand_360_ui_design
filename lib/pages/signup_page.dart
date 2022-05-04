@@ -213,7 +213,8 @@ class SignupPage extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child:
-                        Container(child: Image.asset('images/google_icon.png')),
+                        Container(child: Image.asset('images/google_icon.png')
+                        ),
                   ),
                   SizedBox(
                     width: 50,
