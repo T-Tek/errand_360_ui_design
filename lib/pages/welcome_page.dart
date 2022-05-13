@@ -174,10 +174,7 @@ class _WelcomePageState extends State<WelcomePage> {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                          builder: (context) => SearchPage()));
+                                  
                                 },
                                 child: Text(
                                   'View all',
@@ -192,6 +189,7 @@ class _WelcomePageState extends State<WelcomePage> {
                       ),
                       Expanded(
                         child: Container(
+                          padding: EdgeInsets.only(left: 20, right: 20),
                           color: Colors.grey[100],
                           height: 150,
                           child: ListView.builder(

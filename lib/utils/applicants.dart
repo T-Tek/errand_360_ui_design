@@ -27,7 +27,7 @@ class _ApplicantsCardState extends State<ApplicantsCard> {
     return SingleChildScrollView(
       child: Container(
         height: 140,
-        margin: EdgeInsets.only(left: 20, right: 20, bottom: 12,),
+        margin: EdgeInsets.only( bottom: 12,),
         decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
             color: Colors.white,
