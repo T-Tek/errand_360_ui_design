@@ -51,7 +51,7 @@ class _ApplicantsCardState extends State<ApplicantsCard> {
                           padding: const EdgeInsets.only(top: 5),
                           child: CircleAvatar(
                             backgroundImage: AssetImage(widget.applicantProfilePic),
-                            radius: 30,
+                            radius: 25,
                           ),
                         ),
                         SizedBox(
@@ -70,7 +70,7 @@ class _ApplicantsCardState extends State<ApplicantsCard> {
                                     style: TextStyle(
                                         fontWeight: FontWeight.bold,
                                         color: Colors.grey[600],
-                                        fontSize: 20),
+                                        fontSize: 17),
                                   ),
                                 ),
                                 SizedBox(
@@ -79,7 +79,8 @@ class _ApplicantsCardState extends State<ApplicantsCard> {
                                 Text(
                                   widget.applicantAddress,
                                   style: TextStyle(
-                                      color: Colors.grey[500], height: 0.2),
+                                      color: Colors.grey[500], 
+                                      height: 0.2, fontSize: 14),
                                 ),
                               ],
                             ),

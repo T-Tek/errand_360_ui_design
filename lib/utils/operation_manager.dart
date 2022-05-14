@@ -2,6 +2,7 @@
 
 import 'dart:io';
 
+import 'package:errand360_ui/pages/edit_job.dart';
 import 'package:flutter/material.dart';
 
 class OperationManagerCard extends StatelessWidget {
@@ -123,11 +124,19 @@ class OperationManagerCard extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Text(
-                'Edit Job Details',
-                style: TextStyle(
-                    color: Colors.purple, fontWeight: FontWeight.bold,
-                          fontSize: 12),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => EditJob()));
+                },
+                child: Text(
+                  'Edit Job Details',
+                  style: TextStyle(
+                      color: Colors.purple, fontWeight: FontWeight.bold,
+                            fontSize: 12),
+                ),
               ),
               SizedBox(width:70),
                Text(

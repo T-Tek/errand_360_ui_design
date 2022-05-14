@@ -38,6 +38,7 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
             SizedBox(height: 10),
             Container(
               child: TabBar(
+                  indicatorSize: TabBarIndicatorSize.tab,
                   labelPadding: EdgeInsets.only(left: 0.5),
                   controller: _tabController,
                   labelColor: Colors.black,
@@ -51,7 +52,9 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
             SizedBox(height: 20),
 
             Expanded(
-              child: TabBarView(controller: _tabController, children: [
+              child: TabBarView(
+                controller: _tabController, 
+                children: [
                 ListView.builder(
                   itemCount: allApplicants.length,
                   itemBuilder: (context, index) {
@@ -60,9 +63,30 @@ class _SearchPageState extends State<SearchPage> with TickerProviderStateMixin {
                       applicantName: allApplicants[index][1],
                       applicantAddress: allApplicants[index][2],);
                 }),
-                Text('first page'),
-                Text('first page'),
-                Text('hi'),
+                 ListView.builder(
+                  itemCount: shortListed.length,
+                  itemBuilder: (context, index) {
+                  return ApplicantsCard(
+                      applicantProfilePic: shortListed[index][0],
+                      applicantName: shortListed[index][1],
+                      applicantAddress: shortListed[index][2],);
+                }),
+                   ListView.builder(
+                  itemCount: unSure.length,
+                  itemBuilder: (context, index) {
+                  return ApplicantsCard(
+                      applicantProfilePic: unSure[index][0],
+                      applicantName: unSure[index][1],
+                      applicantAddress: unSure[index][2],);
+                }),
+                    ListView.builder(
+                  itemCount: deClined.length,
+                  itemBuilder: (context, index) {
+                  return ApplicantsCard(
+                      applicantProfilePic: deClined[index][0],
+                      applicantName: deClined[index][1],
+                      applicantAddress: deClined[index][2],);
+                }),
               ]),
             ),
           ],
